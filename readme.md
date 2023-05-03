@@ -1,6 +1,7 @@
 # President Speeches
 ## Intro
 
+This is going to be a project looking at Presidential speeches, to congress, from about FDR to the present day. As of this writing, this project will mainly be looking at sentiment in the speeches and then graphing that. 
 
 
 Data received from the following: 
