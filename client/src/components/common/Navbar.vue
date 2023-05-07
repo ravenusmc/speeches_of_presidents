@@ -31,7 +31,7 @@
           <span v-if="loginFlag">
             <li class="nav-item">
               <a class="nav-link">
-                <router-link to="/analyze">Analyze</router-link>
+                <router-link to="/analyze">The Data</router-link>
               </a>
             </li>
           </span>
@@ -40,7 +40,7 @@
               <router-link to="/about">About</router-link>
             </a>
           </li>
-          <span v-if="!loginFlag">
+          <!-- <span v-if="!loginFlag">
             <li class="nav-item">
               <a class="nav-link">
                 <router-link v-if="!loginFlag" to="/login">Login</router-link>
@@ -55,7 +55,7 @@
                 >
               </a>
             </li>
-          </span>
+          </span> -->
           <span v-if="loginFlag">
             <li class="nav-item">
               <a class="nav-link">
