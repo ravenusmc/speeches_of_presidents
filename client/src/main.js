@@ -7,7 +7,10 @@ import {
 import App from './App.vue'
 import router from './router'
 import store from './store'
+import VueGoogleCharts from 'vue-google-charts'
 
+// Google charts plugin
+Vue.use(VueGoogleCharts);
 
 library.add(faUserSecret,
   faHashtag,
