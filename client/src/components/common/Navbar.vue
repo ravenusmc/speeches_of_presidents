@@ -21,17 +21,10 @@
               ><router-link to="/">Home</router-link>
             </a>
           </li>
-          <span v-if="loginFlag">
+          <span>
             <li class="nav-item">
               <a class="nav-link">
-                <router-link to="/main">Enter Data</router-link>
-              </a>
-            </li>
-          </span>
-          <span v-if="loginFlag">
-            <li class="nav-item">
-              <a class="nav-link">
-                <router-link to="/analyze">The Data</router-link>
+                <router-link to="/analysis">Analysis</router-link>
               </a>
             </li>
           </span>

@@ -54,9 +54,11 @@ section {
 }
 
 .paragragh-div {
-	border: 2px solid blue;
   margin-right: 5%;
-	
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .heading {
@@ -64,7 +66,6 @@ section {
 }
 
 .paragraphs {
-  border: 2px solid red;
-  width: 75%;
+  width: 70%;
 }
 </style>
