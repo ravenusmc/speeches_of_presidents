@@ -18,9 +18,12 @@ class Analyze():
 
     def speech_sentiment(self):
         sentiment_object = Analyze()
-        # I have to get sentiment from each speech
-        # Go through each sentence of each speech and then average them
         count = 0
+        speech_data = []
+        columns = ['President', 'Average Sentiment']
+        speech_data.append(columns)
+        for speech in self.speeches_list:
+            print(speech.iloc[count, 0])
         while count <= 4:
             speech_text = self.speeches_list[0].iloc[count, 2]
             speech_text_ready_for_analysis = TextBlob(speech_text)
@@ -29,8 +32,6 @@ class Analyze():
                 sentence_sentiment = sentence.sentiment[0]
                 sentence_sentiment_list.append(sentence_sentiment)
             average = sentiment_object.get_average(sentence_sentiment_list)
-            print(average)
-            input()
             count += 1
         # print(self.speeches_list[0].iloc[1,2])
         # print(self.speeches_list[0].head())
