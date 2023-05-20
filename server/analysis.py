@@ -23,18 +23,23 @@ class Analyze():
         columns = ['President', 'Average Sentiment']
         speech_data.append(columns)
         # Have to get sentiment for each speech corpus...
-        for speech in self.speeches_list:
-            print(speech.iloc[count, 0])
-            # while count <= 4:
-            speech_text = speech.iloc[count, 2]
+        while count <= 4:
+            rows = []
+            President = self.speeches_list[0].iloc[count, 0]
+            # print(self.speeches_list[0].iloc[count, 0])
+            # input()
+            speech_text = self.speeches_list[0].iloc[count, 2]
             speech_text_ready_for_analysis = TextBlob(speech_text)
             sentence_sentiment_list = []
             for sentence in speech_text_ready_for_analysis.sentences:
                 sentence_sentiment = sentence.sentiment[0]
                 sentence_sentiment_list.append(sentence_sentiment)
             average = sentiment_object.get_average(sentence_sentiment_list)
-            print(average)
+            rows.append(President)
+            rows.append(average)
+            speech_data.append(rows)
             count += 1
+        print(speech_data)
         # print(self.speeches_list[0].iloc[1,2])
         # print(self.speeches_list[0].head())
 
