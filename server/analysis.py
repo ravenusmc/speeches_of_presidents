@@ -22,6 +22,7 @@ class Analyze():
         speech_data = []
         columns = ['President', 'Average Sentiment']
         speech_data.append(columns)
+        # Have to get sentiment for each speech corpus...
         for speech in self.speeches_list:
             print(speech.iloc[count, 0])
             # while count <= 4:
