@@ -40,8 +40,6 @@ class Analyze():
             speech_data.append(rows)
             count += 1
         print(speech_data)
-        # print(self.speeches_list[0].iloc[1,2])
-        # print(self.speeches_list[0].head())
 
     # def test(self):
     #     print(self.first_speech_set.head())
