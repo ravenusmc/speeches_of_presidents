@@ -25,10 +25,10 @@ class Analyze():
         # Have to get sentiment for each speech corpus...
         while count <= 4:
             rows = []
-            President = self.speeches_list[0].iloc[count, 0]
+            President = self.speeches_list[1].iloc[count, 0]
             # print(self.speeches_list[0].iloc[count, 0])
             # input()
-            speech_text = self.speeches_list[0].iloc[count, 2]
+            speech_text = self.speeches_list[1].iloc[count, 2]
             speech_text_ready_for_analysis = TextBlob(speech_text)
             sentence_sentiment_list = []
             for sentence in speech_text_ready_for_analysis.sentences:
