@@ -7,6 +7,7 @@
       <div>
         <FourthCorpus />
         <FifthCorpus />
+        <SixthCorpus />
       </div>
     </section>
   </div>
@@ -15,12 +16,14 @@
 <script>
 import FourthCorpus from "@/components/Graphs/FourthCorpus.vue";
 import FifthCorpus from "@/components/Graphs/FifthCorpus.vue";
+import SixthCorpus from "@/components/Graphs/SixthCorpus.vue";
 
 export default {
   name: "Analysis",
   components: {
     FourthCorpus,
     FifthCorpus,
+    SixthCorpus,
   },
 };
 </script>

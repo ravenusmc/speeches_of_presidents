@@ -18,11 +18,18 @@ const data = {
 	['Dwight D. Eisenhower', 0.11518392547946223], 
 	['John F. Kennedy', 0.10300204949548698], 
 	['Lyndon B. Johnson', 0.056660692951015536]],
+	sixth_party_corpus_sentiment: [['President', 'Average Sentiment'], 
+	['Lyndon B. Johnson', 0.1032863902258471], 
+	['Richard M. Nixon', 0.11298690759285576], 
+	['Gerald Ford', 0.10885030293187649], 
+	['Jimmy Carter', 0.08100335239797166], 
+	['Ronald Reagan', 0.0734686560296906]],
 };
 
 const getters = {
 	fourth_party_corpus_sentiment: (state) => state.fourth_party_corpus_sentiment,
 	fifth_party_corpus_sentiment: (state) => state.fifth_party_corpus_sentiment,
+	sixth_party_corpus_sentiment: (state) => state.sixth_party_corpus_sentiment,
 };
 
 const actions = {
