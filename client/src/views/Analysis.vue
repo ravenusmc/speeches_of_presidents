@@ -9,6 +9,9 @@
         <FifthCorpus />
         <SixthCorpus />
       </div>
+      <div>
+        <MasterGraph />
+      </div>
     </section>
   </div>
 </template>
@@ -17,6 +20,7 @@
 import FourthCorpus from "@/components/Graphs/FourthCorpus.vue";
 import FifthCorpus from "@/components/Graphs/FifthCorpus.vue";
 import SixthCorpus from "@/components/Graphs/SixthCorpus.vue";
+import MasterGraph from "@/components/Graphs/MasterGraph.vue";
 
 export default {
   name: "Analysis",
@@ -24,6 +28,7 @@ export default {
     FourthCorpus,
     FifthCorpus,
     SixthCorpus,
+    MasterGraph,
   },
 };
 </script>
