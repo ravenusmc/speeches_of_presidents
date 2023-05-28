@@ -24,11 +24,11 @@ export default {
     return {
       typeOne: "ColumnChart",
       chartOptionsOne: {
-        title: "Main Graph",
+        title: "Main Grap",
         legend: { position: "top" },
         colors: ["#3b3b6d"],
-        height: 600,
-        width: 850,
+        height: 630,
+        width: 950,
         vAxes: {
           0: { title: "Sentiment" },
         },
