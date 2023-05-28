@@ -24,7 +24,7 @@ export default {
     return {
       typeOne: "ColumnChart",
       chartOptionsOne: {
-        title: "Master Graph",
+        title: "Main Graph",
         legend: { position: "top" },
         colors: ["#3b3b6d"],
         height: 600,
