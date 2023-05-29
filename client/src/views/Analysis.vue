@@ -4,13 +4,13 @@
       <h1 class="title center">Analysis of the speeches</h1>
     </div>
     <section>
+      <div>
+        <MasterGraph />
+      </div>
       <div class='initial-graph-area'>
         <FourthCorpus />
         <FifthCorpus />
         <SixthCorpus />
-      </div>
-      <div>
-        <MasterGraph />
       </div>
     </section>
   </div>
