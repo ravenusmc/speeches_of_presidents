@@ -3,8 +3,11 @@
     <div class="title-div">
       <h1 class="title center">Analysis of the speeches</h1>
     </div>
+    <div>
+      <SelectionForm/>
+    </div>
     <section>
-      <div>
+      <div class='main-graph'>
         <MasterGraph />
       </div>
       <div class='initial-graph-area'>
@@ -17,6 +20,7 @@
 </template>
 
 <script>
+import SelectionForm from "@/components/forms/SelectionForm.vue";
 import FourthCorpus from "@/components/Graphs/FourthCorpus.vue";
 import FifthCorpus from "@/components/Graphs/FifthCorpus.vue";
 import SixthCorpus from "@/components/Graphs/SixthCorpus.vue";
@@ -25,6 +29,7 @@ import MasterGraph from "@/components/Graphs/MasterGraph.vue";
 export default {
   name: "Analysis",
   components: {
+    SelectionForm,
     FourthCorpus,
     FifthCorpus,
     SixthCorpus,
@@ -40,6 +45,12 @@ export default {
 
 .title {
   text-transform: uppercase;
+}
+
+.main-graph {
+  display: flex;
+  justify-content: center;
+
 }
 
 .initial-graph-area {
