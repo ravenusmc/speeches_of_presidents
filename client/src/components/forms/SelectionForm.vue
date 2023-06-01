@@ -5,7 +5,7 @@
         <label for="party">Select Party:</label>
         <select v-model="selectedParty">
           <option disabled value="">Please select one</option>
-          <option v-for="party in parties" :key="item" :value="item">
+          <option v-for="party in parties" :key="party" :value="party">
             {{ party }}
           </option>
         </select>
@@ -29,27 +29,16 @@ export default {
   name: "SelectionForm",
   data() {
     return {
-      parties: ["Democrat", "Republican"],
+      parties: ["Democratic", "Republican"],
       selectedParty: null,
     };
   },
   methods: {
     // ...mapActions("data", ["submitActionToDatabase"]),
     changeParty() {
-      console.log("workd");
-      // const payload = {
-      //   action_id: this.actionID,
-      //   user_id: this.userObject["id"],
-      //   recruit_action: this.selectedValueRecruitAction,
-      //   action_number: this.actionNumber,
-      //   NOA: this.NOA,
-      //   Authority: this.Authority,
-      //   Processor_ieNumber: this.userObject["ieNumber"],
-      //   Date_Receieved: this.Date_Receieved,
-      //   Returned: this.selectedValueReturned,
-      //   Keyed: this.selectedValueKeyed,
-      //   Applied: this.selectedValueApplied,
-      // };
+      const payload = {
+        party: this.selectedParty,
+      };
       // this.submitActionToDatabase({ payload });
     },
   },
