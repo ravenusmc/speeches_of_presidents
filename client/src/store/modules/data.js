@@ -51,6 +51,13 @@ const getters = {
 
 const actions = {
 
+	changeDynamicGraphs: ({ commit }, { payload }) => {
+		console.log('ACTIONS')
+		// commit('setSelectedIENumber', payload['ieNumber'])
+
+	},
+
+
 	// changeDynamicGraphs: ({ commit }, { payload }) => {
 	// 	commit('setSelectedIENumber', payload['ieNumber'])
 	// 	const path = 'http://localhost:5000/changeDynamicGraphs';

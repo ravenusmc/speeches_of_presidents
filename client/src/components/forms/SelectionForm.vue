@@ -24,7 +24,8 @@
 </template>
 
 <script>
-// Allow user to select president based on party
+import { mapActions } from "vuex";
+
 export default {
   name: "SelectionForm",
   data() {
@@ -34,12 +35,12 @@ export default {
     };
   },
   methods: {
-    // ...mapActions("data", ["submitActionToDatabase"]),
+    ...mapActions("data", ["changeDynamicGraphs"]),
     changeParty() {
       const payload = {
         party: this.selectedParty,
       };
-      // this.submitActionToDatabase({ payload });
+      this.changeDynamicGraphs({ payload });
     },
   },
 };
