@@ -6,6 +6,7 @@ import store from '@/store/index';
 Vue.use(Vuex);
 
 const data = {
+	backup_fourth_party_corpus_sentiment: [],
 	fourth_party_corpus_sentiment: [['President', 'Average Sentiment'], 
 	['William McKinley', 0.09575257741244457], 
 	['William Taft', 0.09492347125366417], 
@@ -52,8 +53,30 @@ const getters = {
 const actions = {
 
 	changeDynamicGraphs: ({ commit }, { payload }) => {
-		console.log('ACTIONS')
-		// commit('setSelectedIENumber', payload['ieNumber'])
+		if (store.state.data.fourth_party_corpus_sentiment.length == 6) {
+			let backup = store.state.data.fourth_party_corpus_sentiment
+			commit('backup_fourth_party_corpus_sentiment', backup)
+		}else {
+			store.state.data.fourth_party_corpus_sentiment = store.state.data.backup_fourth_party_corpus_sentiment
+		}
+		// console.log(payload.party)
+		// console.log(store.state.data.fourth_party_corpus_sentiment)
+		let new_fourth_party_corpus_sentiment = []
+		let new_fifth_party_corpus_sentiment = []
+		let new_sixth_party_corpus_sentiment = []
+		let new_MasterGraphSentiment = []
+		if (payload.party === 'Republican') {
+			new_fourth_party_corpus_sentiment = [['President', 'Average Sentiment'], ...store.state.data.fourth_party_corpus_sentiment.filter(([name]) => ['William McKinley', 'William Taft', 'Warren G. Harding', 'Calvin Coolidge'].includes(name))];
+			new_fifth_party_corpus_sentiment  = [['President', 'Average Sentiment'], ...store.state.data.fifth_party_corpus_sentiment.filter(([name]) => ['Dwight D. Eisenhower'].includes(name))];
+			//sixth_party_corpus_sentiment = [['President', 'Average Sentiment'], ...store.state.data.fourth_party_corpus_sentiment.filter(([name]) => ['William McKinley', 'William Taft', 'Warren G. Harding', 'Calvin Coolidge'].includes(name))];
+		} 
+		else if (payload.party === 'Democratic') {
+			console.log('here')
+			new_fourth_party_corpus_sentiment = [['President', 'Average Sentiment'], ...store.state.data.fourth_party_corpus_sentiment.filter(([name]) => ['Woodrow Wilson'].includes(name))];
+			new_fifth_party_corpus_sentiment  = [['President', 'Average Sentiment'], ...store.state.data.fifth_party_corpus_sentiment.filter(([name]) => ['Franklin D. Roosevelt', 'Harry S. Truman', 'John F. Kennedy', 'Lyndon B. Johnson'].includes(name))];
+		} 
+		commit('setFourth_party_corpus_sentiment', new_fourth_party_corpus_sentiment)
+		commit('setFifth_party_corpus_sentiment', new_fifth_party_corpus_sentiment)
 
 	},
 
@@ -75,8 +98,16 @@ const actions = {
 
 const mutations = {
 
-	setActionsByIeNumber(state, value) {
-		state.actionsByIenumber = value
+	backup_fourth_party_corpus_sentiment(state, value) {
+		state.backup_fourth_party_corpus_sentiment = value		
+	},
+
+	setFourth_party_corpus_sentiment(state, value) {
+		state.fourth_party_corpus_sentiment = value
+	},
+
+	setFifth_party_corpus_sentiment(state, value) {
+		state.fifth_party_corpus_sentiment = value
 	},
 
 
