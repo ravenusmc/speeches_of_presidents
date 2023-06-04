@@ -59,25 +59,24 @@ const actions = {
 		}else {
 			store.state.data.fourth_party_corpus_sentiment = store.state.data.backup_fourth_party_corpus_sentiment
 		}
-		// console.log(payload.party)
-		// console.log(store.state.data.fourth_party_corpus_sentiment)
+
 		let new_fourth_party_corpus_sentiment = []
 		let new_fifth_party_corpus_sentiment = []
 		let new_sixth_party_corpus_sentiment = []
 		let new_MasterGraphSentiment = []
 		if (payload.party === 'Republican') {
 			new_fourth_party_corpus_sentiment = [['President', 'Average Sentiment'], ...store.state.data.fourth_party_corpus_sentiment.filter(([name]) => ['William McKinley', 'William Taft', 'Warren G. Harding', 'Calvin Coolidge'].includes(name))];
-			new_fifth_party_corpus_sentiment  = [['President', 'Average Sentiment'], ...store.state.data.fifth_party_corpus_sentiment.filter(([name]) => ['Dwight D. Eisenhower'].includes(name))];
-			//sixth_party_corpus_sentiment = [['President', 'Average Sentiment'], ...store.state.data.fourth_party_corpus_sentiment.filter(([name]) => ['William McKinley', 'William Taft', 'Warren G. Harding', 'Calvin Coolidge'].includes(name))];
+			new_fifth_party_corpus_sentiment = [['President', 'Average Sentiment'], ...store.state.data.fifth_party_corpus_sentiment.filter(([name]) => ['Dwight D. Eisenhower'].includes(name))];
+			new_sixth_party_corpus_sentiment = [['President', 'Average Sentiment'], ...store.state.data.sixth_party_corpus_sentiment.filter(([name]) => ['Richard M. Nixon', 'Gerald Ford', 'Ronald Reagan'].includes(name))];
 		} 
 		else if (payload.party === 'Democratic') {
-			console.log('here')
 			new_fourth_party_corpus_sentiment = [['President', 'Average Sentiment'], ...store.state.data.fourth_party_corpus_sentiment.filter(([name]) => ['Woodrow Wilson'].includes(name))];
-			new_fifth_party_corpus_sentiment  = [['President', 'Average Sentiment'], ...store.state.data.fifth_party_corpus_sentiment.filter(([name]) => ['Franklin D. Roosevelt', 'Harry S. Truman', 'John F. Kennedy', 'Lyndon B. Johnson'].includes(name))];
+			new_fifth_party_corpus_sentiment = [['President', 'Average Sentiment'], ...store.state.data.fifth_party_corpus_sentiment.filter(([name]) => ['Franklin D. Roosevelt', 'Harry S. Truman', 'John F. Kennedy', 'Lyndon B. Johnson'].includes(name))];
+			new_sixth_party_corpus_sentiment = [['President', 'Average Sentiment'], ...store.state.data.sixth_party_corpus_sentiment.filter(([name]) => ['Lyndon B. Johnson', 'Jimmy Carter' ].includes(name))];
 		} 
 		commit('setFourth_party_corpus_sentiment', new_fourth_party_corpus_sentiment)
 		commit('setFifth_party_corpus_sentiment', new_fifth_party_corpus_sentiment)
-
+		commit('setFifth_party_corpus_sentiment', new_sixth_party_corpus_sentiment)
 	},
 
 
@@ -108,6 +107,10 @@ const mutations = {
 
 	setFifth_party_corpus_sentiment(state, value) {
 		state.fifth_party_corpus_sentiment = value
+	},
+
+	setSixth_party_corpus_sentiment(state, value) {
+		state.Sixth_party_corpus_sentiment = value
 	},
 
 
