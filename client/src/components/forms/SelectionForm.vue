@@ -19,7 +19,6 @@
         Submit
       </button>
     </form>
-    https://github.com/ravenusmc/work_data_entry_tool/blob/main/client/src/components/actionForms/ActionsForm.vue
   </div>
 </template>
 
