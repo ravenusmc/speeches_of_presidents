@@ -8,6 +8,8 @@ Vue.use(Vuex);
 const data = {
 	backup_fourth_party_corpus_sentiment: [],
 	backup_fifth_party_corpus_sentiment: [],
+	backup_sixth_party_corpus_sentiment: [],
+	backup_MasterGraphSentiment: [],
 	fourth_party_corpus_sentiment: [['President', 'Average Sentiment'],
 	['William McKinley', 0.09575257741244457],
 	['William Taft', 0.09492347125366417],
@@ -55,18 +57,23 @@ const actions = {
 
 	changeDynamicGraphs: ({ commit }, { payload }) => {
 		if (store.state.data.MasterGraphSentiment.length === 16) {
-			console.log('IF')
 			let backup_fourth = store.state.data.fourth_party_corpus_sentiment
 			let backup_fifth = store.state.data.fifth_party_corpus_sentiment
+			let backup_sixth = store.state.data.sixth_party_corpus_sentiment
+			let backup_master = store.state.data.MasterGraphSentiment
 			commit('backup_fourth_party_corpus_sentiment', backup_fourth)
 			commit('backup_fifth_party_corpus_sentiment', backup_fifth)
+			commit('backup_sixth_party_corpus_sentiment', backup_sixth)
+			commit('backup_MasterGraphSentiment', backup_master)
 		} else {
 			console.log('ELSE')
 			store.state.data.fourth_party_corpus_sentiment = store.state.data.backup_fourth_party_corpus_sentiment
 			store.state.data.fifth_party_corpus_sentiment = store.state.data.backup_fifth_party_corpus_sentiment
-			console.log(store.state.data.fourth_party_corpus_sentiment)
+			store.state.data.sixth_party_corpus_sentiment = store.state.data.backup_sixth_party_corpus_sentiment
+			store.state.data.MasterGraphSentiment = store.state.data.backup_MasterGraphSentiment
 		}
 
+		console.log(store.state.data.sixth_party_corpus_sentiment)
 
 		let new_fourth_party_corpus_sentiment = []
 		let new_fifth_party_corpus_sentiment = []
@@ -92,19 +99,6 @@ const actions = {
 		commit('setMasterGraphSentiment', new_MasterGraphSentiment)
 	},
 
-	// changeDynamicGraphs: ({ commit }, { payload }) => {
-	// 	commit('setSelectedIENumber', payload['ieNumber'])
-	// 	const path = 'http://localhost:5000/changeDynamicGraphs';
-	// 	axios.post(path, payload)
-	// 		.then((res) => {
-	// 			commit('setActionsByIeNumber', res.data[0])
-	// 			commit('setRecruitActionCount', res.data[1])
-	// 		})
-	// 		.catch((error) => {
-	// 			console.log(error);
-	// 		});
-	// },
-
 };
 
 const mutations = {
@@ -115,6 +109,14 @@ const mutations = {
 
 	backup_fifth_party_corpus_sentiment(state, value) {
 		state.backup_fifth_party_corpus_sentiment = value
+	},
+
+	backup_sixth_party_corpus_sentiment(state, value) {
+		state.backup_sixth_party_corpus_sentiment = value
+	},
+
+	backup_MasterGraphSentiment(state,value) {
+		state.backup_MasterGraphSentiment = value
 	},
 
 	setFourth_party_corpus_sentiment(state, value) {
