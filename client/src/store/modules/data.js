@@ -91,6 +91,11 @@ const actions = {
 			new_fifth_party_corpus_sentiment = [['President', 'Average Sentiment'], ...store.state.data.fifth_party_corpus_sentiment.filter(([name]) => ['Franklin D. Roosevelt', 'Harry S. Truman', 'John F. Kennedy', 'Lyndon B. Johnson'].includes(name))];
 			new_sixth_party_corpus_sentiment = [['President', 'Average Sentiment'], ...store.state.data.sixth_party_corpus_sentiment.filter(([name]) => ['Lyndon B. Johnson', 'Jimmy Carter'].includes(name))];
 			new_MasterGraphSentiment = [['President', 'Average Sentiment'], ...store.state.data.MasterGraphSentiment.filter(([name]) => ['Woodrow Wilson', 'Franklin D. Roosevelt', 'Harry S. Truman', 'John F. Kennedy', 'Lyndon B. Johnson', 'Jimmy Carter'].includes(name))];
+		}else {
+			new_fourth_party_corpus_sentiment = store.state.data.backup_fourth_party_corpus_sentiment
+			new_fifth_party_corpus_sentiment = store.state.data.backup_fifth_party_corpus_sentiment
+			new_sixth_party_corpus_sentiment = store.state.data.backup_sixth_party_corpus_sentiment
+			new_MasterGraphSentiment = store.state.data.backup_MasterGraphSentiment
 		}
 
 		commit('setFourth_party_corpus_sentiment', new_fourth_party_corpus_sentiment)

@@ -29,7 +29,7 @@ export default {
   name: "SelectionForm",
   data() {
     return {
-      parties: ["Democratic", "Republican"],
+      parties: ["Original Graphs","Democratic", "Republican"],
       selectedParty: null,
     };
   },
