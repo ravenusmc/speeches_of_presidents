@@ -3,7 +3,7 @@
     <div class="title-div">
       <h1 class="title center">Analysis of the speeches</h1>
     </div>
-    <div>
+    <div class='form-area'>
       <SelectionForm/>
     </div>
     <section>
@@ -45,6 +45,13 @@ export default {
 
 .title {
   text-transform: uppercase;
+}
+
+.form-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .main-graph {
