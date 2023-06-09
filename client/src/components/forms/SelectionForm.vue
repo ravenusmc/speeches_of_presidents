@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form class="contact-form" @submit="changeParty">
+    <form class="contact-form" @change="changeParty">
       <div class="form-group">
         <label for="party">Select Party:</label>
         <select v-model="selectedParty">
@@ -10,14 +10,6 @@
           </option>
         </select>
       </div>
-      <button
-        @click.prevent="changeParty"
-        type="submit"
-        name="login"
-        class="btn btn-primary button-fix"
-      >
-        Submit
-      </button>
     </form>
   </div>
 </template>
@@ -30,7 +22,7 @@ export default {
   data() {
     return {
       parties: ["Original Graphs","Democratic", "Republican"],
-      selectedParty: null,
+      selectedParty: "Original Graphs",
     };
   },
   methods: {
