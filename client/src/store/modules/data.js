@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import axios from 'axios';
 import store from '@/store/index';
 
 Vue.use(Vuex);
@@ -66,14 +65,11 @@ const actions = {
 			commit('backup_sixth_party_corpus_sentiment', backup_sixth)
 			commit('backup_MasterGraphSentiment', backup_master)
 		} else {
-			console.log('ELSE')
 			store.state.data.fourth_party_corpus_sentiment = store.state.data.backup_fourth_party_corpus_sentiment
 			store.state.data.fifth_party_corpus_sentiment = store.state.data.backup_fifth_party_corpus_sentiment
 			store.state.data.sixth_party_corpus_sentiment = store.state.data.backup_sixth_party_corpus_sentiment
 			store.state.data.MasterGraphSentiment = store.state.data.backup_MasterGraphSentiment
 		}
-
-		console.log(store.state.data.sixth_party_corpus_sentiment)
 
 		let new_fourth_party_corpus_sentiment = []
 		let new_fifth_party_corpus_sentiment = []
